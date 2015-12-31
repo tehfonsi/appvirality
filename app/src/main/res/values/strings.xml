@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppVirality</string>
+    <string name="reset">Reset</string>
+    <string name="crash">Crash</string>
+</resources>
