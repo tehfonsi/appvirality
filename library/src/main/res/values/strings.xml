@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Library</string>
+
+    <string name="what_do_you_think">Enjoying %s?</string>
+    <string name="feedback_positive">Yes!</string>
+    <string name="feedback_negative">Not really</string>
+
+    <string name="text_review">How about a rating on the Play Store then?</string>
+    <string name="leave_review">Ok, sure</string>
+    <string name="no_thanks">No, thanks</string>
+
+    <string name="text_feedback">Would you mind giving us some feedback?</string>
+    <string name="send_feedback">Ok, sure</string>
+
+    <string name="feedback_chooser">Send feedback via</string>
+    <string name="feedback_subject">Feedback</string>
 </resources>

@@ -4,22 +4,23 @@ import android.content.Context;
 import android.util.Log;
 
 import tehfonsi.github.com.appvirality.preferences.AppViralityPreferences;
-import tehfonsi.github.com.appvirality.preferences.DialogPreferences;
+import tehfonsi.github.com.appvirality.preferences.RatingPreferences;
 
 /**
  * Created by stephanschober on 31.12.15.
  */
 public class AbstractBuilder {
 
-    private final String TAG  = RatingDialogBuilder.class.getSimpleName();
-    private AppViralityPreferences mPreferences;
+    private final String TAG  = AbstractBuilder.class.getSimpleName();
+    private RatingPreferences mPreferences;
 
-    private int mTimesShown = 1;
+    private int mTimesShown = -1;
     private int mMinStartCount = 3;
     private int mMinStartCountWithoutCrash = 3;
+    private String mFeedbackMail;
 
     public AbstractBuilder(Context mContext) {
-        this.mPreferences = new DialogPreferences(mContext);
+        this.mPreferences = new RatingPreferences(mContext);
 
         initExceptionHandler();
     }
@@ -39,6 +40,11 @@ public class AbstractBuilder {
         return this;
     }
 
+    public AbstractBuilder withFeedbackMail(String feedbackMail) {
+        this.mFeedbackMail = feedbackMail;
+        return this;
+    }
+
     private void initExceptionHandler() {
         Thread.UncaughtExceptionHandler currentHandler = Thread.getDefaultUncaughtExceptionHandler();
 
@@ -50,7 +56,7 @@ public class AbstractBuilder {
         }
     }
 
-    public boolean shouldShowDialog() {
+    public boolean shouldShow() {
         boolean startCountCondition = false;
         boolean startCountWithoutCrashCondition = false;
         boolean timesShownCondition = false;
@@ -65,7 +71,7 @@ public class AbstractBuilder {
             startCountWithoutCrashCondition = true;
         }
 
-        if (mPreferences.getTimesShown() < mTimesShown) {
+        if (mPreferences.getTimesShown() < mTimesShown || mTimesShown < 0) {
             Log.v(TAG, "timesShownCondition");
             timesShownCondition = true;
         }
@@ -78,8 +84,12 @@ public class AbstractBuilder {
         mPreferences.increaseStartCountWithoutCrash();
     }
 
-    protected AppViralityPreferences getPreferences() {
+    protected RatingPreferences getPreferences() {
         return mPreferences;
+    }
+
+    protected String getFeedbackMail() {
+        return mFeedbackMail;
     }
 
     public void reset() {

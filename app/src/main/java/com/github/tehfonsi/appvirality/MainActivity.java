@@ -1,12 +1,13 @@
 package com.github.tehfonsi.appvirality;
 
-import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import tehfonsi.github.com.appvirality.RatingDialogBuilder;
+import tehfonsi.github.com.appvirality.RatingEmbeddedBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        final RatingDialogBuilder ratingDialogBuilder = new RatingDialogBuilder(this);
+        //DIALOG
+        final RatingDialogBuilder ratingDialogBuilder = (RatingDialogBuilder) new RatingDialogBuilder(this)
+                .withFeedbackMail("teh.fonsi+appvirality@gmail.com");
 
         Button resetButton = (Button) findViewById(R.id.button_reset);
         resetButton.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ratingDialogBuilder.showDialogFragment(getSupportFragmentManager(), R.style.AppTheme);
+        ratingDialogBuilder.showDialogFragment(getSupportFragmentManager());
+
+
+        //EMBEDDED
+        final RatingEmbeddedBuilder ratingEmbeddedBuilder = (RatingEmbeddedBuilder) new RatingEmbeddedBuilder(this)
+                .withFeedbackMail("teh.fonsi+appvirality@gmail.com");
+
+        LinearLayout embeddedContainer = (LinearLayout) findViewById(R.id.container_embedded);
+        if (ratingEmbeddedBuilder.shouldShow()) {
+            embeddedContainer.addView(ratingEmbeddedBuilder.getView(this));
+        }
     }
 }

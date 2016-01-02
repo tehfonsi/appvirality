@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:id="@+id/container_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/text_what_do_you_think"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_feedback_negative"
+                style="@style/AppViralityButton"
+                android:text="@string/feedback_negative"
+                android:gravity="center_vertical|right"
+                android:textColor="?attr/colorAccent"
+                android:textSize="16sp"/>
+
+            <View android:layout_width="48dp"
+                android:layout_height="1dp"/>
+
+            <Button
+                android:id="@+id/button_feedback_positive"
+                style="@style/AppViralityButton"
+                android:text="@string/feedback_positive"
+                android:gravity="center_vertical|left"
+                android:textColor="?attr/colorAccent"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/text_review"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_review_no_thanks"
+                style="@style/AppViralityButton"
+                android:text="@string/no_thanks"
+                android:gravity="center_vertical|right"
+                android:textColor="?attr/colorAccent"
+                android:textSize="16sp"/>
+
+            <View android:layout_width="48dp"
+                android:layout_height="1dp"/>
+
+            <Button
+                android:id="@+id/button_leave_review"
+                style="@style/AppViralityButton"
+                android:text="@string/leave_review"
+                android:gravity="center_vertical|left"
+                android:textColor="?attr/colorAccent"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/text_feedback"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_feedback_no_thanks"
+                style="@style/AppViralityButton"
+                android:text="@string/no_thanks"
+                android:gravity="center_vertical|right"
+                android:textColor="?attr/colorAccent"
+                android:textSize="16sp"/>
+
+            <View android:layout_width="48dp"
+                android:layout_height="1dp"/>
+
+            <Button
+                android:id="@+id/button_send_feedback"
+                style="@style/AppViralityButton"
+                android:text="@string/send_feedback"
+                android:gravity="center_vertical|left"
+                android:textColor="?attr/colorAccent"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

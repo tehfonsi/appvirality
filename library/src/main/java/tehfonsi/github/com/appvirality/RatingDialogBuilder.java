@@ -28,7 +28,7 @@ public class RatingDialogBuilder extends AbstractBuilder {
 
     public void showDialogFragment(final FragmentManager fragmentManager, final int theme) {
         increaseStartCount();
-        if (shouldShowDialog()) {
+        if (shouldShow()) {
             if (mDelay > 0) {
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -43,10 +43,21 @@ public class RatingDialogBuilder extends AbstractBuilder {
         }
     }
 
+    @Override
+    public boolean shouldShow() {
+        boolean didNotRateCondition = true;
+
+        if (getPreferences().didUserRate()) {
+            didNotRateCondition = false;
+        }
+
+        return didNotRateCondition && super.shouldShow();
+    }
+
     private void show(FragmentManager fragmentManager, int theme) {
         if (fragmentManager.isDestroyed()) return;
 
-        RatingDialogFragment.newInstance(theme).show(fragmentManager, "rating_dialog");
+        RatingDialogFragment.newInstance(theme, getFeedbackMail()).show(fragmentManager, "rating_dialog");
         getPreferences().increaseTimesShown();
     }
 }
