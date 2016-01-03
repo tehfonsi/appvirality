@@ -17,6 +17,7 @@ import tehfonsi.github.com.appvirality.recyclerview.RatingRecyclerViewAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final String FEEDBACK_MAIL = "teh.fonsi+appvirality@gmail.com";
     RecyclerView mRecyclerView;
 
     @Override
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         //ADAPTER
         final RatingEmbeddedBuilder adapterRatingEmbeddedBuilder = (RatingEmbeddedBuilder) new RatingEmbeddedBuilder(this)
-                .withFeedbackMail("teh.fonsi+appvirality@gmail.com");
+                .withFeedbackMail(FEEDBACK_MAIL);
         adapterRatingEmbeddedBuilder.withAdapterPosition(5);
 
         RatingRecyclerViewAdapter ratingRecyclerViewAdapter = new RatingRecyclerViewAdapter(simpleRecylcerViewAdapter, adapterRatingEmbeddedBuilder);
@@ -44,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         //DIALOG
         final RatingDialogBuilder ratingDialogBuilder = (RatingDialogBuilder) new RatingDialogBuilder(this)
-                .withFeedbackMail("teh.fonsi+appvirality@gmail.com")
-                .withTimesShown(3);
+                .withFeedbackMail(FEEDBACK_MAIL)
+                .withTimesShown(2);
+        ratingDialogBuilder.withDelay(10);
 
         Button resetButton = (Button) findViewById(R.id.button_reset);
         resetButton.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         //EMBEDDED
         final RatingEmbeddedBuilder ratingEmbeddedBuilder = (RatingEmbeddedBuilder) new RatingEmbeddedBuilder(this)
-                .withFeedbackMail("teh.fonsi+appvirality@gmail.com");
+                .withFeedbackMail(FEEDBACK_MAIL);
 
         LinearLayout embeddedContainer = (LinearLayout) findViewById(R.id.container_embedded);
         if (ratingEmbeddedBuilder.shouldShow()) {
