@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,9 +22,19 @@ import tehfonsi.github.com.appvirality.utils.CommonUtils;
  */
 public class RatingViewHelper {
 
-    public static View getView(final Context context, final String feedbackMail, final RatingPreferences preferences, final RatingCallbackListener callbackListener) {
+    public static View getView(final ViewGroup parent, int resourceId, final String feedbackMail, final RatingPreferences preferences, final RatingCallbackListener callbackListener) {
+        return getView(parent.getContext(), parent, resourceId, feedbackMail, preferences, callbackListener);
+    }
+
+    public static View getView(final Context context, final ViewGroup parent, int resourceId, final String feedbackMail, final RatingPreferences preferences, final RatingCallbackListener callbackListener) {
+
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        final View appFeedbackView = layoutInflater.inflate(R.layout.layout_rating, null);
+        final View appFeedbackView;
+        if (parent == null) {
+            appFeedbackView = layoutInflater.inflate(resourceId, null);
+        } else {
+            appFeedbackView = layoutInflater.inflate(resourceId, parent, false);
+        }
 
         TextView whatDoYouThinkText;
         final LinearLayout containerQuestion;

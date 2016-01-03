@@ -57,7 +57,7 @@ public class RatingDialogFragment extends DialogFragment implements RatingViewHe
             mDialog = new AppCompatDialog(getContext(), mTheme);
         }
 
-        mDialog.setContentView(RatingViewHelper.getView(getContext(), mFeedbackMail,new RatingPreferences(getContext()), this));
+        mDialog.setContentView(RatingViewHelper.getView(getContext(), null, R.layout.layout_rating, mFeedbackMail,new RatingPreferences(getContext()), this));
 
         return mDialog;
     }
