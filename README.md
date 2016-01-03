@@ -1,4 +1,4 @@
-# App Virality *Beta*
+# App Virality *Beta* [![Release](https://img.shields.io/github/release/tehfonsi/appvirality.svg?label=Jitpack)](https://jitpack.io/#tehfonsi/appvirality)
 Tools to help your android app go viral.
 
 **Warning:** This is very early version, use at your own risk!
@@ -13,6 +13,23 @@ It should help you get better ratings and build a better app, using the followin
 - Recyclerview adapter
 
 **More coming soon**
+
+##Include in your project
+###Using Maven
+
+Add it to your build.gradle with:
+```gradle
+repositories {
+    maven { url "https://jitpack.io" }
+}
+```
+and:
+
+```gradle
+dependencies {
+    compile 'com.github.tehfonsi:appvirality:{latest version}'
+}
+```
 
 #Screenshots
 ![Image](https://raw.githubusercontent.com/tehfonsi/appvirality/develop/media/rating_dialog_small.png)
