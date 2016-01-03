@@ -14,6 +14,10 @@ It should help you get better ratings and build a better app, using the followin
 
 **More coming soon**
 
+#Screenshots
+![Image](https://raw.githubusercontent.com/tehfonsi/appvirality/develop/media/rating_dialog_small.png)
+![Image](https://raw.githubusercontent.com/tehfonsi/appvirality/develop/media/rating_recyclerview_small.png)
+
 #Developed By
 
 * Stephan Schober 
