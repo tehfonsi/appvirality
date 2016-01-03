@@ -79,7 +79,7 @@ public class AbstractBuilder {
         return startCountCondition && startCountWithoutCrashCondition && timesShownCondition;
     }
 
-    protected void increaseStartCount() {
+    public void increaseStartCount() {
         mPreferences.increaseStartCount();
         mPreferences.increaseStartCountWithoutCrash();
     }

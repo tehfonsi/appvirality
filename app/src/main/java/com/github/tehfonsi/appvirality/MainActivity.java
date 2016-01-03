@@ -49,22 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 .withTimesShown(2);
         ratingDialogBuilder.withDelay(10);
 
-        Button resetButton = (Button) findViewById(R.id.button_reset);
-        resetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ratingDialogBuilder.reset();
-            }
-        });
-
-        Button crashButton = (Button) findViewById(R.id.button_crash);
-        crashButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                throw new RuntimeException("Crash!");
-            }
-        });
-
         ratingDialogBuilder.showDialogFragment(getSupportFragmentManager());
 
 
@@ -76,6 +60,26 @@ public class MainActivity extends AppCompatActivity {
         if (ratingEmbeddedBuilder.shouldShow()) {
             embeddedContainer.addView(ratingEmbeddedBuilder.getView(embeddedContainer));
         }
+
+
+        //init buttons
+        Button crashButton = (Button) findViewById(R.id.button_crash);
+        crashButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new RuntimeException("Crash!");
+            }
+        });
+
+        Button resetButton = (Button) findViewById(R.id.button_reset);
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ratingEmbeddedBuilder.reset();
+                ratingDialogBuilder.reset();
+                adapterRatingEmbeddedBuilder.reset();
+            }
+        });
     }
 
     private List<String> generateListItems(int count) {

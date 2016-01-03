@@ -23,6 +23,7 @@ public class RatingRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
                                      @NonNull RatingEmbeddedBuilder ratingEmbeddedBuilder) {
         this.mRatingPlacement = new RatingRecyclerViewPlacement(ratingEmbeddedBuilder, originalAdapter);
         this.mOriginalAdapter = originalAdapter;
+        ratingEmbeddedBuilder.increaseStartCount();
     }
 
     @Override
