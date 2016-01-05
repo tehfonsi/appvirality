@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Library</string>
 
+    <!-- Rating -->
+
     <string name="what_do_you_think">Enjoying %s?</string>
     <string name="feedback_positive">Yes!</string>
     <string name="feedback_negative">Not really</string>
@@ -14,4 +16,13 @@
 
     <string name="feedback_chooser">Send feedback via</string>
     <string name="feedback_subject">Feedback</string>
+
+
+    <!-- Invite -->
+    <string name="invite_text">Would you like to help us grow?</string>
+    <string name="invite_action_negative">Not really</string>
+    <string name="invite_action_positive">Ok, sure</string>
+    <string name="invite_via">Tell your friends about us, via</string>
+    <string name="invite_default_text" formatted="false">I just tried %s, and it\'s awesome! Check it out %s</string>
+
 </resources>
