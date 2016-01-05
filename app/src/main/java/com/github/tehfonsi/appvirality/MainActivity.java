@@ -11,9 +11,11 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import tehfonsi.github.com.appvirality.RatingDialogBuilder;
-import tehfonsi.github.com.appvirality.RatingEmbeddedBuilder;
-import tehfonsi.github.com.appvirality.recyclerview.RatingRecyclerViewAdapter;
+import tehfonsi.github.com.appvirality.AbstractBuilder;
+import tehfonsi.github.com.appvirality.invite.InviteSnackbarBuilder;
+import tehfonsi.github.com.appvirality.rating.RatingDialogBuilder;
+import tehfonsi.github.com.appvirality.rating.RatingEmbeddedBuilder;
+import tehfonsi.github.com.appvirality.rating.RatingRecyclerViewAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +36,19 @@ public class MainActivity extends AppCompatActivity {
 
         SimpleRecyclerViewAdapter simpleRecylcerViewAdapter = new SimpleRecyclerViewAdapter(generateListItems(100));
 
-        //ADAPTER
+        //INVITE SNACKBAR
+
+        InviteSnackbarBuilder inviteSnackbarBuilder = new InviteSnackbarBuilder(this);
+        inviteSnackbarBuilder.withDelay(5);
+        inviteSnackbarBuilder.withCustomConditionOnly(new AbstractBuilder.CustomCondition() {
+            @Override
+            public boolean shouldShow() {
+                return true;
+            }
+        });
+        inviteSnackbarBuilder.show(findViewById(android.R.id.content));
+
+        //RATING ADAPTER
         final RatingEmbeddedBuilder adapterRatingEmbeddedBuilder = (RatingEmbeddedBuilder) new RatingEmbeddedBuilder(this)
                 .withFeedbackMail(FEEDBACK_MAIL);
         adapterRatingEmbeddedBuilder.withAdapterPosition(5);
@@ -43,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setAdapter(ratingRecyclerViewAdapter);
 
-        //DIALOG
+        //RATING DIALOG
         final RatingDialogBuilder ratingDialogBuilder = (RatingDialogBuilder) new RatingDialogBuilder(this)
                 .withFeedbackMail(FEEDBACK_MAIL)
                 .withTimesShown(2);
@@ -52,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         ratingDialogBuilder.showDialogFragment(getSupportFragmentManager());
 
 
-        //EMBEDDED
+        //RATING EMBEDDED
         final RatingEmbeddedBuilder ratingEmbeddedBuilder = (RatingEmbeddedBuilder) new RatingEmbeddedBuilder(this)
                 .withFeedbackMail(FEEDBACK_MAIL);
 
