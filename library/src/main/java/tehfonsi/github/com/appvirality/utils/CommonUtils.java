@@ -23,4 +23,8 @@ public class CommonUtils {
         }
         return (String) (applicationInfo != null ? packageManager.getApplicationLabel(applicationInfo) : "(unknown)");
     }
+
+    public static final String getPlayStoreUrl(Context context) {
+        return "https://play.google.com/store/apps/details?id="+context.getPackageName();
+    }
 }
