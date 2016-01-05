@@ -1,11 +1,6 @@
 package tehfonsi.github.com.appvirality;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
 import java.lang.Thread.UncaughtExceptionHandler;
-
-import tehfonsi.github.com.appvirality.preferences.AppViralityPreferences;
 
 public class ExceptionHandler implements UncaughtExceptionHandler {
 
