@@ -1,16 +1,13 @@
-package tehfonsi.github.com.appvirality.views;
+package tehfonsi.github.com.appvirality.rating;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDialog;
 
 import tehfonsi.github.com.appvirality.R;
-import tehfonsi.github.com.appvirality.preferences.RatingPreferences;
 
 /**
  * Created by stephanschober on 30.12.15.

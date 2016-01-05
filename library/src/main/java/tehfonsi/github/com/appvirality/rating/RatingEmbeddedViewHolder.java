@@ -1,4 +1,4 @@
-package tehfonsi.github.com.appvirality.recyclerview;
+package tehfonsi.github.com.appvirality.rating;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

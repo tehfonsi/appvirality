@@ -1,15 +1,11 @@
-package tehfonsi.github.com.appvirality;
+package tehfonsi.github.com.appvirality.rating;
 
 import android.content.Context;
-import android.os.Handler;
-import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tehfonsi.github.com.appvirality.preferences.RatingPreferences;
-import tehfonsi.github.com.appvirality.utils.CommonUtils;
-import tehfonsi.github.com.appvirality.views.RatingDialogFragment;
-import tehfonsi.github.com.appvirality.views.RatingViewHelper;
+import tehfonsi.github.com.appvirality.AbstractBuilder;
+import tehfonsi.github.com.appvirality.R;
 
 /**
  * Created by stephanschober on 30.12.15.
@@ -19,14 +15,14 @@ public class RatingEmbeddedBuilder extends AbstractBuilder {
     private int mAdapterPosition = 8;
 
     public RatingEmbeddedBuilder(Context mContext) {
-        super(mContext);
+        super(mContext, new RatingPreferences(mContext));
     }
 
     @Override
     public boolean shouldShow() {
         boolean didNotRateCondition = true;
 
-        if (getPreferences().didUserRate()) {
+        if (getPreferences().didUserFinishPositive()) {
             didNotRateCondition = false;
         }
 

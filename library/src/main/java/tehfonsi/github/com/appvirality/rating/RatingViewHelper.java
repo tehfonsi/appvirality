@@ -1,4 +1,4 @@
-package tehfonsi.github.com.appvirality.views;
+package tehfonsi.github.com.appvirality.rating;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -13,8 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import tehfonsi.github.com.appvirality.R;
-import tehfonsi.github.com.appvirality.preferences.AppViralityPreferences;
-import tehfonsi.github.com.appvirality.preferences.RatingPreferences;
 import tehfonsi.github.com.appvirality.utils.CommonUtils;
 
 /**
@@ -114,7 +112,7 @@ public class RatingViewHelper {
                     Toast.makeText(context, "No Play Store installed on device", Toast.LENGTH_SHORT).show();
                 }
 
-                preferences.userRated();
+                preferences.userFinishedPositive();
 
                 containerQuestion.setVisibility(View.GONE);
                 containerFeedback.setVisibility(View.GONE);

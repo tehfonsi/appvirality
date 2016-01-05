@@ -1,4 +1,4 @@
-package tehfonsi.github.com.appvirality.preferences;
+package tehfonsi.github.com.appvirality;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,7 +16,7 @@ public abstract class AppViralityPreferences {
         this.mContext = mContext;
     }
 
-    abstract String getPreferenceName();
+    public abstract String getPreferenceName();
 
     protected SharedPreferences getPreferences() {
         return mContext.getSharedPreferences(getPreferenceName(), Context.MODE_PRIVATE);
@@ -52,6 +52,14 @@ public abstract class AppViralityPreferences {
 
     public void increaseTimesShown() {
         getEditablePreferences().putInt("pref_times_shown", getTimesShown()+1).apply();
+    }
+
+    public boolean didUserFinishPositive() {
+        return getPreferences().getBoolean("pref_user_finished_positive", false);
+    }
+
+    public void userFinishedPositive() {
+        getEditablePreferences().putBoolean("pref_user_finished_positive", true).apply();
     }
 
     public void resetAll() {

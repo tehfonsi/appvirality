@@ -1,10 +1,10 @@
-package tehfonsi.github.com.appvirality;
+package tehfonsi.github.com.appvirality.rating;
 
 import android.content.Context;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 
-import tehfonsi.github.com.appvirality.views.RatingDialogFragment;
+import tehfonsi.github.com.appvirality.AbstractBuilder;
 
 /**
  * Created by stephanschober on 30.12.15.
@@ -14,7 +14,7 @@ public class RatingDialogBuilder extends AbstractBuilder {
     private int mDelay = 0;
 
     public RatingDialogBuilder(Context mContext) {
-        super(mContext);
+        super(mContext, new RatingPreferences(mContext));
     }
 
     public RatingDialogBuilder withDelay(int seconds) {
@@ -47,7 +47,7 @@ public class RatingDialogBuilder extends AbstractBuilder {
     public boolean shouldShow() {
         boolean didNotRateCondition = true;
 
-        if (getPreferences().didUserRate()) {
+        if (getPreferences().didUserFinishPositive()) {
             didNotRateCondition = false;
         }
 

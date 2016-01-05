@@ -1,13 +1,11 @@
-package tehfonsi.github.com.appvirality.recyclerview;
+package tehfonsi.github.com.appvirality.rating;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tehfonsi.github.com.appvirality.RatingDialogBuilder;
-import tehfonsi.github.com.appvirality.RatingEmbeddedBuilder;
+import tehfonsi.github.com.appvirality.rating.RatingEmbeddedBuilder;
 
 /**
  * Created by stephanschober on 03.01.16.
