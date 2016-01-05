@@ -12,6 +12,11 @@ It should help you get better ratings and build a better app, using the followin
 - Embedded View
 - Recyclerview adapter
 
+**2. Invite**
+
+Ask the user to invite friends, using the following elements:
+- Snackbar
+
 **More coming soon**
 
 ##Include in your project
@@ -32,8 +37,16 @@ dependencies {
 ```
 
 #Screenshots
+##Rating & Feedback
 ![Image](https://raw.githubusercontent.com/tehfonsi/appvirality/develop/media/rating_dialog_small.png)
 ![Image](https://raw.githubusercontent.com/tehfonsi/appvirality/develop/media/rating_recyclerview_small.png)
+
+##Invite
+![Image](https://raw.githubusercontent.com/tehfonsi/appvirality/develop/media/invite_snackbar_small.png)
+
+#Changelog
+
+0.2.0: Added invite snackbar, moved some files and methods
 
 #Developed By
 
