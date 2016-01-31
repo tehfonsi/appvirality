@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -16,9 +17,12 @@ import tehfonsi.github.com.appvirality.invite.InviteSnackbarBuilder;
 import tehfonsi.github.com.appvirality.rating.RatingDialogBuilder;
 import tehfonsi.github.com.appvirality.rating.RatingEmbeddedBuilder;
 import tehfonsi.github.com.appvirality.rating.RatingRecyclerViewAdapter;
+import tehfonsi.github.com.appvirality.utils.AppPackage;
+import tehfonsi.github.com.appvirality.utils.AppViralityUtils;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final String TAG = MainActivity.class.getSimpleName();
     static final String FEEDBACK_MAIL = "teh.fonsi+appvirality@gmail.com";
     RecyclerView mRecyclerView;
 
@@ -35,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
         SimpleRecyclerViewAdapter simpleRecylcerViewAdapter = new SimpleRecyclerViewAdapter(generateListItems(100));
+
+        for (AppPackage appPackage: AppViralityUtils.getInstalledApps(this)) {
+            Log.i(TAG, appPackage.name());
+        }
 
         //INVITE SNACKBAR
 
