@@ -52,7 +52,6 @@ dependencies {
 
 * Stephan Schober 
  * [Twitter @tehfonsi](https://twitter.com/tehfonsi)
- * <teh.fonsi@gmail.com>
 
 ##Already used in the following apps
 (feel free to send me new projects)
